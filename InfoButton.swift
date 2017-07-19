@@ -11,16 +11,16 @@ import Cocoa
 
 @IBDesignable
 open class InfoButton : NSControl, NSPopoverDelegate {
-    var mainSize: CGFloat!
+    public var mainSize: CGFloat!
 
-    @IBInspectable var showOnHover: Bool = false
-    @IBInspectable var fillMode: Bool = true
-    @IBInspectable var animatePopover: Bool = false
-    @IBInspectable var content: String = ""
-    @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor
-    var secondaryColor: NSColor = NSColor.white
+    @IBInspectable public var showOnHover: Bool = false
+    @IBInspectable public var fillMode: Bool = true
+    @IBInspectable public var animatePopover: Bool = false
+    @IBInspectable public var content: String = ""
+    @IBInspectable public var primaryColor: NSColor = NSColor.scrollBarColor
+    public var secondaryColor: NSColor = NSColor.white
 
-    var mouseInside = false {
+    public var mouseInside = false {
         didSet {
             self.needsDisplay = true
             if showOnHover {
@@ -37,7 +37,7 @@ open class InfoButton : NSControl, NSPopoverDelegate {
         }
     }
 
-    var trackingArea: NSTrackingArea!
+    public var trackingArea: NSTrackingArea!
     override open func updateTrackingAreas() {
         super.updateTrackingAreas()
         if trackingArea != nil {
@@ -50,7 +50,7 @@ open class InfoButton : NSControl, NSPopoverDelegate {
     fileprivate var stringAttributeDict = [String: AnyObject]()
     fileprivate var circlePath: NSBezierPath!
 
-    var popover: NSPopover!
+    public var popover: NSPopover!
 
     
     required public init?(coder: NSCoder) {
